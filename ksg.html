@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>Document</title>
+    <style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    flex-grow: 1;
+}
+.container{
+    display: flex;
+    flex-wrap: wrap;
+}
+.product-card{
+    width:300px;
+    background:#fff;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+    position:relative;
+    transition:all .3s ease-in-out;
+    margin-left: 20px;
+    margin-top: 20px;
+    margin-right: 20px;
+}
+
+.product-card:hover{
+    /* transform: scale(1.016);  
+    transform:translate(16px, 16px); */
+      
+
+    transform: scale(1.1) translate(16px,16px);
+
+
+   /*  transform:
+        translate3d(50px,20px,100px)
+        rotateY(45deg)
+        scale(1.1); */
+}
+
+
+.product-card img{
+    width:100%;
+    height:320px;
+    object-fit:cover;
+}
+
+.discount{
+    position:absolute;
+    top:12px;
+    left:12px;
+    background:#000;
+    color:#fff;
+    padding:5px 10px;
+    border-radius:20px;
+    font-size:12px;
+}
+
+.wishlist{
+    position:absolute;
+    top:12px;
+    right:12px;
+    width:40px;
+    height:40px;
+    border:none;
+    border-radius:50%;
+    background: transparent;
+    cursor:pointer;
+    font-size:18px;
+    color:rgba(0,0,0,0.4);
+    transition:.3s;
+}
+
+.product-info{
+    padding:15px;
+}
+
+.price{
+    margin:10px 0;
+    font-size:22px;
+    font-weight:700;
+}
+
+.price span{
+    text-decoration:line-through;
+    color:gray;
+    font-size:16px;
+}
+
+.buy-btn{
+    width:100%;
+    padding:12px;
+    border:none;
+    background:black;
+    color:white;
+    border-radius:8px;
+    cursor:pointer;
+}
+.active{
+    color:red;
+}
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="product-card">
+
+    <span class="discount">20% OFF</span>
+
+    <button class="wishlist">
+        <i class="fa-solid fa-heart"></i>
+    </button>
+
+    <img src="img/1.webp" alt="Lace Design">
+
+    <div class="product-info">
+        <h3>Gold Handmade Lace</h3>
+
+        <p class="price">
+            ₹399 <span>₹499</span>
+        </p>
+
+        <button class="buy-btn">
+            Buy Now
+        </button>
+    </div>
+
+</div>
+    <div class="product-card">
+
+    <span class="discount">20% OFF</span>
+
+    <button class="wishlist">
+        <i class="fa-solid fa-heart"></i>
+    </button>
+
+    <img src="img/2.webp" alt="Lace Design">
+
+    <div class="product-info">
+        <h3>Clear Rhinestone Crystal Lace</h3>
+
+        <p class="price">
+            ₹399 <span>₹499</span>
+        </p>
+
+        <button class="buy-btn">
+            Buy Now
+        </button>
+    </div>
+
+</div>
+    <div class="product-card">
+
+    <span class="discount">20% OFF</span>
+
+    <button class="wishlist">
+        <i class="fa-solid fa-heart"></i>
+    </button>
+
+    <img src="img/3.webp" alt="Lace Design">
+
+    <div class="product-info">
+        <h3>Gold embroidered Lace</h3>
+
+        <p class="price">
+            ₹399 <span>₹499</span>
+        </p>
+
+        <button class="buy-btn">
+            Buy Now
+        </button>
+    </div>
+
+</div>
+    <div class="product-card">
+
+    <span class="discount">20% OFF</span>
+
+    <button class="wishlist">
+        <i class="fa-solid fa-heart"></i>
+    </button>
+
+    <img src="img/4.webp" alt="Lace Design">
+
+    <div class="product-info">
+        <h3>scalloped gold pearl bead Lace</h3>
+
+        <p class="price">
+            ₹399 <span>₹499</span>
+        </p>
+
+        <button class="buy-btn">
+            Buy Now
+        </button>
+    </div>
+
+</div>
+    <div class="product-card">
+
+    <span class="discount">20% OFF</span>
+
+    <button class="wishlist">
+        <i class="fa-solid fa-heart"></i>
+    </button>
+
+    <img src="img/5.webp" alt="Lace Design">
+
+    <div class="product-info">
+        <h3>fringe Lace, kiran lace for duppatta</h3>
+
+        <p class="price">
+            ₹399 <span>₹499</span>
+        </p>
+
+        <button class="buy-btn">
+            Buy Now
+        </button>
+    </div>
+
+</div>
+    <div class="product-card">                    
+
+    <span class="discount">20% OFF</span>
+
+    <button class="wishlist">
+        <i class="fa-solid fa-heart"></i>
+    </button>
+
+    <img src="img/6.webp" alt="Lace Design">
+
+    <div class="product-info">
+        <h3>Beautiful crystal Hanging lace</h3>
+
+        <p class="price">
+            ₹399 <span>₹499</span>
+        </p>
+
+        <button class="buy-btn">
+            Buy Now
+        </button>
+    </div>
+
+</div>
+    <div class="product-card">
+
+    <span class="discount">20% OFF</span>
+
+    <button class="wishlist">
+        <i class="fa-solid fa-heart"></i>
+    </button>
+
+    <img src="img/7.webp" alt="Lace Design">
+
+    <div class="product-info">
+        <h3>Designer Lace</h3>
+
+        <p class="price">
+            ₹399 <span>₹499</span>
+        </p>
+
+        <button class="buy-btn">
+            Buy Now
+        </button>
+    </div>
+
+</div>
+    <div class="product-card">
+
+    <span class="discount">20% OFF</span>
+
+    <button class="wishlist">
+        <i class="fa-solid fa-heart"></i>
+    </button>
+
+    <img src="img/1.webp" alt="Lace Design">
+
+    <div class="product-info">
+        <h3>Designer Lace</h3>
+
+        <p class="price">
+            ₹399 <span>₹499</span>
+        </p>
+
+        <button class="buy-btn">
+            Buy Now
+        </button>
+    </div>
+
+</div>
+    <div class="product-card">
+
+    <span class="discount">20% OFF</span>
+
+    <button class="wishlist">
+        <i class="fa-solid fa-heart"></i>
+    </button>
+
+    <img src="img/2.webp" alt="Lace Design">
+
+    <div class="product-info">
+        <h3>Designer Lace</h3>
+
+        <p class="price">
+            ₹399 <span>₹499</span>
+        </p>
+
+        <button class="buy-btn">
+            Buy Now
+        </button>
+    </div>
+
+</div>
+    <div class="product-card">
+
+    <span class="discount">20% OFF</span>
+
+    <button class="wishlist">
+        <i class="fa-solid fa-heart"></i>
+    </button>
+
+    <img src="img/3.webp" alt="Lace Design">
+
+    <div class="product-info">
+        <h3>Designer Lace</h3>
+
+        <p class="price">
+            ₹399 <span>₹499</span>
+        </p>
+
+        <button class="buy-btn">
+            Buy Now
+        </button>
+    </div>
+
+</div>
+    <div class="product-card">
+
+    <span class="discount">20% OFF</span>
+
+    <button class="wishlist">
+        <i class="fa-solid fa-heart"></i>
+    </button>
+
+    <img src="img/4.webp" alt="Lace Design">
+
+    <div class="product-info">
+        <h3>Designer Lace</h3>
+
+        <p class="price">
+            ₹399 <span>₹499</span>
+        </p>
+
+        <button class="buy-btn">
+            Buy Now
+        </button>
+    </div>
+
+</div>
+</div>
+<script>
+/*    let heart = document.querySelector(".wishlist");
+
+heart.addEventListener("click",()=>{
+    heart.classList.toggle("active");
+}); */
+/* let hearts = document.querySelectorAll(".wishlist");
+
+hearts.forEach((heart)=>{
+    heart.addEventListener("click",()=>{
+        heart.classList.toggle("active");
+    });
+}); */
+let /* hearts */ = document.querySelectorAll(".wishlist");
+
+hearts.forEach((heart)=>{
+    let icon = heart.querySelector("i");
+
+    heart.addEventListener("click",()=>{
+
+        heart.classList.toggle("active");
+
+        if(heart.classList.contains("active")){
+            icon.classList.remove("fa-regular");
+            icon.classList.add("fa-solid");
+        }else{
+            icon.classList.remove("fa-solid");
+            icon.classList.add("fa-regular");
+        }
+
+    });
+});
+</script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>Document</title>
+    <style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    flex-grow: 1;
+}
+.container{
+    display: flex;
+    flex-wrap: wrap;
+}
+.product-card{
+    width:300px;
+    background:#fff;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+    position:relative;
+    transition:all .3s ease-in-out;
+    margin-left: 20px;
+    margin-top: 20px;
+    margin-right: 20px;
+}
+
+.product-card:hover{
+    /* transform: scale(1.016);  
+    transform:translate(16px, 16px); */
+      
+
+    transform: scale(1.1) translate(16px,16px);
+
+
+   /*  transform:
+        translate3d(50px,20px,100px)
+        rotateY(45deg)
+        scale(1.1); */
+}
+
+
+.product-card img{
+    width:100%;
+    height:320px;
+    object-fit:cover;
+}
+
+.discount{
+    position:absolute;
+    top: 18px;
+    left:12px;
+    background:#000;
+    color:#fff;
+    padding:5px 10px;
+    border-radius:20px;
+    font-size:12px;
+}
+
+.wishlist{
+    position:absolute;
+    top:12px;
+    right:12px;
+    width:40px;
+    height:40px;
+    border:none;
+    border-radius:50%;
+    background: transparent;
+    cursor:pointer;
+    font-size:18px;
+    color:rgba(0,0,0,0.4);
+    transition:.3s;
+}
+
+/* @media (max-width:768px){
+
+    .wishlist{
+        width:50px;
+        height:50px;
+        font-size:24px;
+    }
+
+} */
+
+.product-info{
+    padding:15px;
+}
+
+.price{
+    margin:10px 0;
+    font-size:22px;
+    font-weight:700;
+}
+
+.price span{
+    text-decoration:line-through;
+    color:gray;
+    font-size:16px;
+}
+
+.buy-btn{
+    width:100%;
+    padding:12px;
+    border:none;
+    background:black;
+    color:white;
+    border-radius:8px;
+    cursor:pointer;
+}
+.active{
+    color:red;
+}
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="product-card">
+
+    <span class="discount">20% OFF</span>
+
+    <button class="wishlist">
+        <i class="fa-solid fa-heart"></i>
+    </button>
+
+    <img src="img/1.webp" alt="Lace Design">
+
+    <div class="product-info">
+        <h3>Gold Handmade Lace</h3>
+
+        <p class="price">
+            ₹399 <span>₹499</span>
+        </p>
+
+        <button class="buy-btn">
+            Buy Now
+        </button>
+    </div>
+
+</div>
+    <div class="product-card">
+
+    <span class="discount">20% OFF</span>
+
+    <button class="wishlist">
+        <i class="fa-solid fa-heart"></i>
+    </button>
+
+    <img src="img/2.webp" alt="Lace Design">
+
+    <div class="product-info">
+        <h3>Clear Rhinestone Crystal Lace</h3>
+
+        <p class="price">
+            ₹399 <span>₹499</span>
+        </p>
+
+        <button class="buy-btn">
+            Buy Now
+        </button>
+    </div>
+
+</div>
+    <div class="product-card">
+
+    <span class="discount">20% OFF</span>
+
+    <button class="wishlist">
+        <i class="fa-solid fa-heart"></i>
+    </button>
+
+    <img src="img/3.webp" alt="Lace Design">
+
+    <div class="product-info">
+        <h3>Gold embroidered Lace</h3>
+
+        <p class="price">
+            ₹399 <span>₹499</span>
+        </p>
+
+        <button class="buy-btn">
+            Buy Now
+        </button>
+    </div>
+
+</div>
+    <div class="product-card">
+
+    <span class="discount">20% OFF</span>
+
+    <button class="wishlist">
+        <i class="fa-solid fa-heart"></i>
+    </button>
+
+    <img src="img/4.webp" alt="Lace Design">
+
+    <div class="product-info">
+        <h3>scalloped gold pearl bead Lace</h3>
+
+        <p class="price">
+            ₹399 <span>₹499</span>
+        </p>
+
+        <button class="buy-btn">
+            Buy Now
+        </button>
+    </div>
+
+</div>
+    <div class="product-card">
+
+    <span class="discount">20% OFF</span>
+
+    <button class="wishlist">
+        <i class="fa-solid fa-heart"></i>
+    </button>
+
+    <img src="img/5.webp" alt="Lace Design">
+
+    <div class="product-info">
+        <h3>fringe Lace, kiran lace for duppatta</h3>
+
+        <p class="price">
+            ₹399 <span>₹499</span>
+        </p>
+
+        <button class="buy-btn">
+            Buy Now
+        </button>
+    </div>
+
+</div>
+    <div class="product-card">                    
+
+    <span class="discount">20% OFF</span>
+
+    <button class="wishlist">
+        <i class="fa-solid fa-heart"></i>
+    </button>
+
+    <img src="img/6.webp" alt="Lace Design">
+
+    <div class="product-info">
+        <h3>Beautiful crystal Hanging lace</h3>
+
+        <p class="price">
+            ₹399 <span>₹499</span>
+        </p>
+
+        <button class="buy-btn">
+            Buy Now
+        </button>
+    </div>
+
+</div>
+    <div class="product-card">
+
+    <span class="discount">20% OFF</span>
+
+    <button class="wishlist">
+        <i class="fa-solid fa-heart"></i>
+    </button>
+
+    <img src="img/7.webp" alt="Lace Design">
+
+    <div class="product-info">
+        <h3>Designer Lace</h3>
+
+        <p class="price">
+            ₹399 <span>₹499</span>
+        </p>
+
+        <button class="buy-btn">
+            Buy Now
+        </button>
+    </div>
+
+</div>
+    <div class="product-card">
+
+    <span class="discount">20% OFF</span>
+
+    <button class="wishlist">
+        <i class="fa-solid fa-heart"></i>
+    </button>
+
+    <img src="img/1.webp" alt="Lace Design">
+
+    <div class="product-info">
+        <h3>Designer Lace</h3>
+
+        <p class="price">
+            ₹399 <span>₹499</span>
+        </p>
+
+        <button class="buy-btn">
+            Buy Now
+        </button>
+    </div>
+
+</div>
+    <div class="product-card">
+
+    <span class="discount">20% OFF</span>
+
+    <button class="wishlist">
+        <i class="fa-solid fa-heart"></i>
+    </button>
+
+    <img src="img/2.webp" alt="Lace Design">
+
+    <div class="product-info">
+        <h3>Designer Lace</h3>
+
+        <p class="price">
+            ₹399 <span>₹499</span>
+        </p>
+
+        <button class="buy-btn">
+            Buy Now
+        </button>
+    </div>
+
+</div>
+    <div class="product-card">
+
+    <span class="discount">20% OFF</span>
+
+    <button class="wishlist">
+        <i class="fa-solid fa-heart"></i>
+    </button>
+
+    <img src="img/3.webp" alt="Lace Design">
+
+    <div class="product-info">
+        <h3>Designer Lace</h3>
+
+        <p class="price">
+            ₹399 <span>₹499</span>
+        </p>
+
+        <button class="buy-btn">
+            Buy Now
+        </button>
+    </div>
+
+</div>
+    <div class="product-card">
+
+    <span class="discount">20% OFF</span>
+
+    <button class="wishlist">
+        <i class="fa-solid fa-heart"></i>
+    </button>
+
+    <img src="img/4.webp" alt="Lace Design">
+
+    <div class="product-info">
+        <h3>Designer Lace</h3>
+
+        <p class="price">
+            ₹399 <span>₹499</span>
+        </p>
+
+        <button class="buy-btn">
+            Buy Now
+        </button>
+    </div>
+
+</div>
+</div>
+<script>
+/*    let heart = document.querySelector(".wishlist");
+
+heart.addEventListener("click",()=>{
+    heart.classList.toggle("active");
+}); */
+/* let hearts = document.querySelectorAll(".wishlist");
+
+hearts.forEach((heart)=>{
+    heart.addEventListener("click",()=>{
+        heart.classList.toggle("active");
+    });
+}); */
+let hearts = document.querySelectorAll(".wishlist");
+
+hearts.forEach((heart)=>{
+    let icon = heart.querySelector("i");
+
+    heart.addEventListener("click",()=>{
+
+        heart.classList.toggle("active");
+
+        if(heart.classList.contains("active")){
+            icon.classList.remove("fa-regular");
+            icon.classList.add("fa-solid");
+        }else{
+            icon.classList.remove("fa-solid");
+            icon.classList.add("fa-regular");
+        }
+
+    });
+});
+</script>
+</body>
+</html>

@@ -1,488 +1,607 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <title>Document</title>
-    <style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    flex-grow: 1;
-}
-.container{
-    display: flex;
-    flex-wrap: wrap;
-}
-.product-card{
-    width:300px;
-    background:#fff;
-    border-radius:15px;
-    overflow:hidden;
-    box-shadow:0 5px 15px rgba(0,0,0,.1);
-    position:relative;
-    transition:all .3s ease-in-out;
-    margin-left: 20px;
-    margin-top: 20px;
-    margin-right: 20px;
-}
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-.product-card:hover{
-    /* transform: scale(1.016);  
-    transform:translate(16px, 16px); */
-      
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-    transform: scale(1.1) translate(16px,16px);
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
 
+<title>Kanchan Chandra Store</title>
 
-   /*  transform:
-        translate3d(50px,20px,100px)
-        rotateY(45deg)
-        scale(1.1); */
-}
+<style>
 
-
-.product-card img{
-    width:100%;
-    height:320px;
-    object-fit:cover;
-}
-
-.discount{
-    position:absolute;
-    top:12px;
-    left:12px;
-    background:#000;
-    color:#fff;
-    padding:5px 10px;
-    border-radius:20px;
-    font-size:12px;
-}
-
-.wishlist{
-    position:absolute;
-    top:12px;
-    right:12px;
-    width:40px;
-    height:40px;
-    border:none;
-    border-radius:50%;
-    background: transparent;
-    cursor:pointer;
-    font-size:18px;
-    color:rgba(0,0,0,0.4);
-    transition:.3s;
-}
-
-.product-info{
-    padding:15px;
-}
-
-.price{
-    margin:10px 0;
-    font-size:22px;
-    font-weight:700;
-}
-
-.price span{
-    text-decoration:line-through;
-    color:gray;
-    font-size:16px;
-}
-
-.buy-btn{
-    width:100%;
-    padding:12px;
-    border:none;
-    background:black;
+#preloader{
+    position:fixed;
+    inset:0;
+    background:#2E2A31;
     color:white;
-    border-radius:8px;
-    cursor:pointer;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    z-index:9999;
 }
-.active{
-    color:red;
+
+.logo{
+    width:220px;
+    margin-bottom:10px;
+    animation:zoom 1.5s infinite alternate;
+    
 }
-    </style>
-</head>
-<body>
-<div class="container">
-    <div class="product-card">
 
-    <span class="discount">20% OFF</span>
+#typing-text{
+    font-size:32px;
+    border-right:3px solid white;
+    padding-right:5px;
+    margin-bottom:20px;
+}
 
-    <button class="wishlist">
-        <i class="fa-solid fa-heart"></i>
-    </button>
+#preloader p{
+    font-size:18px;
+    color:#ccc;
+}
 
-    <img src="img/1.webp" alt="Lace Design">
+#main-content{
+    display:none;
+}
 
-    <div class="product-info">
-        <h3>Gold Handmade Lace</h3>
+@keyframes zoom{
+    from{
+        transform:scale(1);
+    }
+    to{
+        transform:scale(1.1);
+    }
+}
 
-        <p class="price">
-            ₹399 <span>₹499</span>
-        </p>
 
-        <button class="buy-btn">
-            Buy Now
-        </button>
-    </div>
 
-</div>
-    <div class="product-card">
-
-    <span class="discount">20% OFF</span>
-
-    <button class="wishlist">
-        <i class="fa-solid fa-heart"></i>
-    </button>
-
-    <img src="img/2.webp" alt="Lace Design">
-
-    <div class="product-info">
-        <h3>Clear Rhinestone Crystal Lace</h3>
-
-        <p class="price">
-            ₹399 <span>₹499</span>
-        </p>
-
-        <button class="buy-btn">
-            Buy Now
-        </button>
-    </div>
-
-</div>
-    <div class="product-card">
-
-    <span class="discount">20% OFF</span>
-
-    <button class="wishlist">
-        <i class="fa-solid fa-heart"></i>
-    </button>
-
-    <img src="img/3.webp" alt="Lace Design">
-
-    <div class="product-info">
-        <h3>Gold embroidered Lace</h3>
-
-        <p class="price">
-            ₹399 <span>₹499</span>
-        </p>
-
-        <button class="buy-btn">
-            Buy Now
-        </button>
-    </div>
-
-</div>
-    <div class="product-card">
-
-    <span class="discount">20% OFF</span>
-
-    <button class="wishlist">
-        <i class="fa-solid fa-heart"></i>
-    </button>
-
-    <img src="img/4.webp" alt="Lace Design">
-
-    <div class="product-info">
-        <h3>scalloped gold pearl bead Lace</h3>
-
-        <p class="price">
-            ₹399 <span>₹499</span>
-        </p>
-
-        <button class="buy-btn">
-            Buy Now
-        </button>
-    </div>
-
-</div>
-    <div class="product-card">
-
-    <span class="discount">20% OFF</span>
-
-    <button class="wishlist">
-        <i class="fa-solid fa-heart"></i>
-    </button>
-
-    <img src="img/5.webp" alt="Lace Design">
-
-    <div class="product-info">
-        <h3>fringe Lace, kiran lace for duppatta</h3>
-
-        <p class="price">
-            ₹399 <span>₹499</span>
-        </p>
-
-        <button class="buy-btn">
-            Buy Now
-        </button>
-    </div>
-
-</div>
-    <div class="product-card">                    
-
-    <span class="discount">20% OFF</span>
-
-    <button class="wishlist">
-        <i class="fa-solid fa-heart"></i>
-    </button>
-
-    <img src="img/6.webp" alt="Lace Design">
-
-    <div class="product-info">
-        <h3>Beautiful crystal Hanging lace</h3>
-
-        <p class="price">
-            ₹399 <span>₹499</span>
-        </p>
-
-        <button class="buy-btn">
-            Buy Now
-        </button>
-    </div>
-
-</div>
-    <div class="product-card">
-
-    <span class="discount">20% OFF</span>
-
-    <button class="wishlist">
-        <i class="fa-solid fa-heart"></i>
-    </button>
-
-    <img src="img/7.webp" alt="Lace Design">
-
-    <div class="product-info">
-        <h3>Designer Lace</h3>
-
-        <p class="price">
-            ₹399 <span>₹499</span>
-        </p>
-
-        <button class="buy-btn">
-            Buy Now
-        </button>
-    </div>
-
-</div>
-    <div class="product-card">
-
-    <span class="discount">20% OFF</span>
-
-    <button class="wishlist">
-        <i class="fa-solid fa-heart"></i>
-    </button>
-
-    <img src="img/1.webp" alt="Lace Design">
-
-    <div class="product-info">
-        <h3>Designer Lace</h3>
-
-        <p class="price">
-            ₹399 <span>₹499</span>
-        </p>
-
-        <button class="buy-btn">
-            Buy Now
-        </button>
-    </div>
-
-</div>
-    <div class="product-card">
-
-    <span class="discount">20% OFF</span>
-
-    <button class="wishlist">
-        <i class="fa-solid fa-heart"></i>
-    </button>
-
-    <img src="img/2.webp" alt="Lace Design">
-
-    <div class="product-info">
-        <h3>Designer Lace</h3>
-
-        <p class="price">
-            ₹399 <span>₹499</span>
-        </p>
-
-        <button class="buy-btn">
-            Buy Now
-        </button>
-    </div>
-
-</div>
-    <div class="product-card">
-
-    <span class="discount">20% OFF</span>
-
-    <button class="wishlist">
-        <i class="fa-solid fa-heart"></i>
-    </button>
-
-    <img src="img/3.webp" alt="Lace Design">
-
-    <div class="product-info">
-        <h3>Designer Lace</h3>
-
-        <p class="price">
-            ₹399 <span>₹499</span>
-        </p>
-
-        <button class="buy-btn">
-            Buy Now
-        </button>
-    </div>
-
-</div>
-    <div class="product-card">
-
-    <span class="discount">20% OFF</span>
-
-    <button class="wishlist">
-        <i class="fa-solid fa-heart"></i>
-    </button>
-
-    <img src="img/4.webp" alt="Lace Design">
-
-    <div class="product-info">
-        <h3>Designer Lace</h3>
-
-        <p class="price">
-            ₹399 <span>₹499</span>
-        </p>
-
-        <button class="buy-btn">
-            Buy Now
-        </button>
-    </div>
-
-</div>
-</div>
-<script>
-/*    let heart = document.querySelector(".wishlist");
-
-heart.addEventListener("click",()=>{
-    heart.classList.toggle("active");
-}); */
-/* let hearts = document.querySelectorAll(".wishlist");
-
-hearts.forEach((heart)=>{
-    heart.addEventListener("click",()=>{
-        heart.classList.toggle("active");
-    });
-}); */
-let hearts = document.querySelectorAll(".wishlist");
-
-hearts.forEach((heart)=>{
-    let icon = heart.querySelector("i");
-
-    heart.addEventListener("click",()=>{
-
-        heart.classList.toggle("active");
-
-        if(heart.classList.contains("active")){
-            icon.classList.remove("fa-regular");
-            icon.classList.add("fa-solid");
-        }else{
-            icon.classList.remove("fa-solid");
-            icon.classList.add("fa-regular");
-        }
-
-    });
-});
-</script>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <title>Document</title>
-    <style>
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    flex-grow: 1;
-}
-.container{
-    display: flex;
-    flex-wrap: wrap;
-}
-.product-card{
-    width:300px;
-    background:#fff;
-    border-radius:15px;
-    overflow:hidden;
-    box-shadow:0 5px 15px rgba(0,0,0,.1);
-    position:relative;
-    transition:all .3s ease-in-out;
-    margin-left: 20px;
-    margin-top: 20px;
-    margin-right: 20px;
+    /* flex-grow: 1; */
 }
 
-.product-card:hover{
-    /* transform: scale(1.016);  
-    transform:translate(16px, 16px); */
-      
-
-    transform: scale(1.1) translate(16px,16px);
-
-
-   /*  transform:
-        translate3d(50px,20px,100px)
-        rotateY(45deg)
-        scale(1.1); */
+body{
+    font-family:'Ubuntu',sans-serif;
+    background:#f5f7fa;
+    padding-top:140px;
 }
 
+/* HEADER */
 
-.product-card img{
+.header{
+    position:fixed;
+    top:0;
+    left:0;
     width:100%;
-    height:320px;
-    object-fit:cover;
+
+    z-index:999;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+
+    padding:15px 0;
+
+    /* background:rgba(255,255,255,.85); */
+     background:rgba(20,20,20,.95);
+    backdrop-filter:blur(15px);
+
+    border-bottom:1px solid rgba(0,0,0,.08);
+
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
 }
 
-.discount{
-    position:absolute;
-    top: 18px;
-    left:12px;
-    background:#000;
-    color:#fff;
-    padding:5px 10px;
-    border-radius:20px;
-    font-size:12px;
+/* LOGO */
+
+.header h1{
+    font-size:38px;
+    font-weight:300;
+    letter-spacing:5px;
+    text-transform:uppercase;
+
+    background:linear-gradient(
+    45deg,
+    #c89b3c,
+    #ffe59a,
+    #c89b3c
+    );
+
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
 }
 
-.wishlist{
-    position:absolute;
-    top:12px;
-    right:12px;
-    width:40px;
-    height:40px;
-    border:none;
-    border-radius:50%;
-    background: transparent;
-    cursor:pointer;
-    font-size:18px;
-    color:rgba(0,0,0,0.4);
+/* GOLD LINE */
+
+.gold-line{
+    width:140px;
+    height:2px;
+    margin-top:8px;
+
+    background:linear-gradient(
+    to right,
+    transparent,
+    gold,
+    transparent
+    );
+}
+
+/* NAVBAR */
+
+.nav{
+    margin-top:15px;
+}
+
+.nav ul{
+    list-style:none;
+
+    display:flex;
+    align-items:center;
+    gap:10px;
+
+    /* background:white; */
+     background:#f5f0ff;
+
+    padding:10px 20px;
+
+    border-radius:50px;
+
+    box-shadow:
+    0 10px 25px rgba(0,0,0,.08);
+}
+
+.nav a{
+    text-decoration:none;
+
+    color:#222;
+
+    padding:10px 18px;
+
+    border-radius:30px;
+
     transition:.3s;
+
+    font-weight:500;
 }
 
-@media (max-width:768px){
+.nav a:hover{
+    background:#d4af37;
+    color:white;
+}
 
-    .wishlist{
-        width:50px;
-        height:50px;
-        font-size:24px;
+/*  DEMO CONTENT */ 
+
+/* .hero{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+
+    background:white;
+
+    padding:80px 30px;
+
+    border-radius:20px;
+
+    text-align:center;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
+.hero h2{
+    font-size:42px;
+    margin-bottom:20px;
+}
+
+.hero p{
+    font-size:18px;
+    color:#555;
+} 
+ */
+/* MOBILE */
+
+@media(max-width:768px){
+
+    body{
+        padding-top:180px;
     }
 
+    .header h1{
+        font-size:24px;
+        letter-spacing:2px;
+    }
+
+    .nav ul{
+        flex-wrap:wrap;
+        justify-content:center;
+        border-radius:20px;
+    }
+
+    .nav a{
+        padding:8px 14px;
+        font-size:14px;
+    }
+
+   /*  .hero h2{
+        font-size:28px;
+    } */
+}
+
+
+html,body{
+    width:100%;
+    overflow-x:hidden;
+}
+
+.slider{
+    width:100%;
+    max-width:100vw;
+    margin:auto;
+    overflow:hidden;
+    position:relative;
+}
+
+.slider-track{
+    display:flex;
+}
+
+.slide{
+    min-width:100%;
+}
+
+.slide img{
+    width:100%;
+    display:block;
+    height:500px;
+        object-fit: fill;
+
+}
+
+/* Mobile */
+@media(max-width:768px){
+    .slide img{
+        height:250px;
+    }
+}
+
+/* html,body{
+    width:100%;
+    overflow-x:hidden;
+} */
+
+.slider{
+    width:100%;
+    max-width:100vw;
+    margin:auto;
+    overflow:hidden;
+    position:relative;
+}
+
+.slider-track{
+    display:flex;
+}
+
+.slide{
+    min-width:100%;
+}
+
+.slide img{
+    width:100%;
+    display:block;
+    height:500px;
+        object-fit: fill;
+
+}
+
+/* Mobile */
+@media(max-width:768px){
+    .slide img{
+        height:250px;
+    }
+}
+
+/* CATEGORY SECTION */
+
+.category-wrapper{
+    position:relative;
+    background:#fff;
+    padding:40px 20px;
+    overflow:hidden;
+}
+
+.circle{
+    position:absolute;
+    width:800px;
+    height:800px;
+    background:#f1f1f1;
+    border-radius:50%;
+    top:-650px;
+    left:50%;
+    transform:translateX(-50%);
+}
+
+.categories{
+    position:relative;
+    z-index:2;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:20px 35px;
+}
+
+.categories a{
+    text-decoration:none;
+    color:#222;
+    font-size:18px;
+    transition:.3s;
+}
+
+  #text{
+    font-family:Arial,sans-serif;
+  }
+
+.categories a:hover{
+    color:#c69a1e;
+}
+
+/* CONTENT AREA */
+
+#content-area{
+    display:none;
+    position:relative;
+    width:100%;
+    height:900px;
+    background:#fff;
+    border-top:1px solid #ddd;
+}
+
+#myframe{
+    width:100%;
+    height:100%;
+    border:none;
+}
+
+/* CLOSE BUTTON */
+
+.close{
+    position:absolute;
+    top:15px;
+    right:20px;
+    width:45px;
+    height:45px;
+    border:none;
+    border-radius:50%;
+    background:#111;
+    color:#fff;
+    font-size:24px;
+    cursor:pointer;
+    z-index:999;
+    transition:.3s;
+}
+
+.close:hover{
+    transform:rotate(90deg);
+}
+
+.about{
+    width:100%;
+    min-height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:80px;
+
+    padding:50px;
+}
+
+/* CIRCLE */
+
+.circle-gallery{
+    position:relative;
+    width:500px;
+    height:500px;
+    border-radius:50%;
+}
+
+.img{
+    position:absolute;
+    width:180px;
+    height:180px;
+    object-fit:cover;
+    border-radius:10px;
+}
+
+/* IMAGE POSITIONS */
+
+.i1{
+    top:0;
+    left:160px;
+}
+
+.i2{
+    top:70px;
+    right:0;
+    transform:rotate(30deg);
+}
+
+.i3{
+    top:250px;
+    right:20px;
+    transform:rotate(-30deg);
+}
+
+.i4{
+    bottom:0;
+    left:160px;
+}
+
+.i5{
+    top:250px;
+    left:0;
+    transform:rotate(30deg);
+}
+
+.i6{
+    top:120px;
+    left:20px;
+    transform:rotate(-30deg);
+    z-index: 9999;
+}
+
+.center-circle{
+    position:absolute;
+    top:50%;
+    left:50%;
+
+    transform:translate(-50%,-50%);
+
+    width:130px;
+    height:130px;
+
+    border-radius:50%;
+    background:#f3f3f3;
+}
+
+/* CONTENT */
+
+.content{
+    width:650px;
+}
+
+.content h2{
+    font-size:45px;
+    font-weight:500;
+    color:#222;
+
+    display:flex;
+    align-items:center;
+    gap:15px;
+
+    margin-bottom:30px;
+}
+
+.content h2 span{
+    width:5px;
+    height:40px;
+    background:#d6b36d;
+}
+
+.content p{
+    font-size:22px;
+    line-height:1.8;
+    color:#555;
+
+    margin-bottom:40px;
+}
+
+.content button{
+    padding:18px 50px;
+
+    border:2px solid #222;
+    background:white;
+
+    font-size:20px;
+    letter-spacing:2px;
+
+    cursor:pointer;
+    transition:.4s;
+}
+
+.content button:hover{
+    background:#222;
+    color:white;
+}
+
+/* MOBILE */
+
+@media(max-width:991px){
+
+.about{
+    flex-direction:column;
+}
+
+.circle-gallery{
+    transform:scale(.8);
+}
+
+.content{
+    width:100%;
+    text-align:center;
+}
+
+.content h2{
+    justify-content:center;
+    font-size:32px;
+}
+
+}
+
+.container{
+    display: flex;
+    flex-wrap: wrap;
+}
+.product-card{
+    width:300px;
+    background:#fff;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+    position:relative;
+    transition:all .3s ease-in-out;
+    margin-left: 20px;
+    margin-top: 20px;
+    margin-right: 20px;
+}
+
+.product-card:hover{
+    /* transform: scale(1.016);  
+    transform:translate(16px, 16px); */
+      
+
+    transform: scale(1.1) translate(16px,16px);
+
+
+   /*  transform:
+        translate3d(50px,20px,100px)
+        rotateY(45deg)
+        scale(1.1); */
+}
+
+
+.product-card img{
+    width:100%;
+    height:320px;
+    object-fit:cover;
+}
+
+.discount{
+    position:absolute;
+    top:12px;
+    left:12px;
+    background:#000;
+    color:#fff;
+    padding:5px 10px;
+    border-radius:20px;
+    font-size:12px;
+}
+
+.wishlist{
+    position:absolute;
+    top:12px;
+    right:12px;
+    width:40px;
+    height:40px;
+    border:none;
+    border-radius:50%;
+    background: transparent;
+    cursor:pointer;
+    font-size:18px;
+    color:rgba(0,0,0,0.4);
+    transition:.3s;
 }
 
 .product-info{
@@ -513,9 +632,120 @@ hearts.forEach((heart)=>{
 .active{
     color:red;
 }
-    </style>
+
+
+</style>
 </head>
 <body>
+
+  <!-- Preloader -->
+    <div id="preloader">
+        <img src="logo4.png" alt="Logo" class="logo">
+
+        <h1 id="typing-text"></h1>
+
+        <p>Loading Awesome Designs only for you...</p>
+    </div>
+
+    <!-- Main Website -->
+    <div id="main-content">
+
+        <!-- Tumhari Website -->
+
+
+
+<header class="header">
+
+    <h1>Kanchan Chandra Store</h1>
+
+    <div class="gold-line"></div>
+
+    <nav class="nav">
+        <ul>
+
+            <li><a href="all.html">Home</a></li>
+
+            <li><a href="index.html">Download</a></li>
+
+            <li><a href="slider.html">About</a></li>
+
+            <li><a href="scr.html">Contact Us</a></li>
+
+        </ul>
+    </nav>
+
+</header>
+
+
+<div class="slider">
+    <div class="slider-track">
+
+        <div class="slide">
+            <img src="img/1.png" alt="">
+        </div>
+
+        <div class="slide">
+            <img src="img/2.jpg" alt="">
+        </div>
+
+        <div class="slide">
+            <img src="img/3.jpg" alt="">
+        </div>
+
+        <div class="slide">
+            <img src="img/4.jpg" alt="">
+        </div>
+
+        <div class="slide">
+            <img src="img/5.jpg" alt="">
+        </div>
+
+        <!-- First image clone -->
+        <div class="slide">
+            <img src="img/1.png" alt="">
+        </div>
+
+    </div>
+</div>
+
+
+<section class="category-wrapper">
+
+<div class="circle"></div>
+
+<div class="categories">
+
+<a  id="text" href="https://vikas6092kr.github.io/luxurias-LACE/">Neck Patch</a>
+
+<a id="text" href="pages/banarasi.html">Banarasi Lace</a>
+
+<a id="text" href="pages/gota.html">Gota Lace</a>
+
+<a id="text" href="pages/latkan.html">Latkan Lace</a>
+
+<a id="text" href="pages/mirror.html">Mirror Lace</a>
+
+<a id="text" href="pages/velvet.html">Velvet Lace</a>
+
+<a id="text" href="pages/tassels.html">Tassels</a>
+
+</div>
+
+</section>
+
+<!-- CONTENT OPEN HERE -->
+
+<div id="content-area">
+
+<button class="close" id="closeBtn">
+✕
+</button>
+
+<iframe id="myframe"></iframe>
+
+</div>
+
+
 <div class="container">
     <div class="product-card">
 
@@ -525,7 +755,7 @@ hearts.forEach((heart)=>{
         <i class="fa-solid fa-heart"></i>
     </button>
 
-    <img src="img/1.webp" alt="Lace Design">
+    <img src="img/1.png" alt="Lace Design">
 
     <div class="product-info">
         <h3>Gold Handmade Lace</h3>
@@ -771,19 +1001,146 @@ hearts.forEach((heart)=>{
 
 </div>
 </div>
+
+
+
+
+<section class="about">
+    
+    <div class="circle-gallery">
+
+        <img src="img/1.png" class="img i1">
+        <img src="img/2.jpg" class="img i2">
+        <img src="img/3.jpg" class="img i3">
+        <img src="img/4.jpg" class="img i4">
+        <img src="img/5.jpg" class="img i5">
+        <img src="img/3.jpg" class="img i6">
+
+        <div class="center-circle"></div>
+
+    </div>
+
+    <div class="content">
+
+        <h2 style="font-family: 'Poppins',sans-serif;">
+            <span></span>
+            Exquisite Vintage Floral Lace Fabric Trim
+        </h2>
+
+        <p style="font-family: 'Poppins',sans-serif;" >
+            This delicate, intricately crafted vintage lace fabric trim
+            adds a touch of elegance and charm to any project.
+            The lace features a beautiful floral pattern,
+            skillfully embroidered with fine detailing that celebrates
+            timeless craftsmanship.
+        </p>
+
+        <button>READ MORE</button>
+
+    </div>
+
+</section>
+
+</div>
+
+
+<!-- <section class="hero">
+
+    <h2>Luxury Lace Collection</h2>
+
+    <p>
+        Premium Banarasi Lace, Neck Patch,
+        Mirror Lace, Velvet Lace and
+        Handmade Designer Collections.
+    </p>
+
+</section> -->
+
+
 <script>
-/*    let heart = document.querySelector(".wishlist");
 
-heart.addEventListener("click",()=>{
-    heart.classList.toggle("active");
-}); */
-/* let hearts = document.querySelectorAll(".wishlist");
+const text = "Welcome To KCS Official Website...";
+const typingText = document.getElementById("typing-text");
 
-hearts.forEach((heart)=>{
-    heart.addEventListener("click",()=>{
-        heart.classList.toggle("active");
+let i = 0;
+
+function typeWriter() {
+    if (i < text.length) {
+        typingText.innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typeWriter, 100);
+    }
+}
+
+window.onload = function () {
+
+    // Typing animation start
+    typeWriter();
+
+    // Preloader hide after 5 sec
+    setTimeout(() => {
+        document.getElementById("preloader").style.display = "none";
+        document.getElementById("main-content").style.display = "block";
+    }, 4000);
+
+};
+
+
+
+const track = document.querySelector(".slider-track");
+const slides = document.querySelectorAll(".slide");
+
+let index = 0;
+
+function slideNext() {
+    index++;
+
+    track.style.transition = "transform 0.8s ease-in-out";
+    track.style.transform = `translateX(-${index * 100}%)`;
+
+    // Last clone par pahunchne ke baad reset
+    if(index === slides.length - 1){
+        setTimeout(() => {
+            track.style.transition = "none";
+            index = 0;
+            track.style.transform = "translateX(0)";
+        }, 800);
+    }
+}
+
+setInterval(slideNext, 3000);
+
+const links = document.querySelectorAll(".categories a");
+const frame = document.getElementById("myframe");
+const area = document.getElementById("content-area");
+const closeBtn = document.getElementById("closeBtn");
+
+links.forEach(link=>{
+
+    link.addEventListener("click",function(e){
+
+        e.preventDefault();
+
+        frame.src = this.href;
+
+        area.style.display = "block";
+
+        area.scrollIntoView({
+            behavior:"smooth"
+        });
+
     });
-}); */
+
+});
+
+closeBtn.addEventListener("click",()=>{
+
+    area.style.display = "none";
+
+    frame.src = "";
+
+});
+
 let hearts = document.querySelectorAll(".wishlist");
 
 hearts.forEach((heart)=>{
@@ -803,6 +1160,10 @@ hearts.forEach((heart)=>{
 
     });
 });
+
+
 </script>
+
+
 </body>
 </html>
